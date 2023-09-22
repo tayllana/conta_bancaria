@@ -3,7 +3,33 @@ package conta;
 public class Main {
 
 	public static void main(String[] args) {
-		//CLIENTES
+		
+		Moeda m0 = new Moeda(0.05, "x");
+		Moeda m1 = new Moeda(0.1, "x");
+		Moeda m2 = new Moeda(0.25, "x");
+		Moeda m3 = new Moeda(0.5, "x");
+		Moeda m4 = new Moeda(1, "x");
+		
+		Cofrinho c = new Cofrinho();
+		
+		c.adicionar(m0);
+		c.adicionar(m1);
+		c.adicionar(m2);
+		c.adicionar(m0);
+		c.adicionar(m3);
+		c.adicionar(m4);
+		c.adicionar(m3);
+		c.adicionar(m3);
+		c.adicionar(m0);
+		c.adicionar(m0);
+		c.adicionar(m2);
+		c.adicionar(m4);
+		
+		c.moedasTotais();
+		c.quantidadeMoeda(m0);
+		c.maiorMoeda();
+		System.out.println("-----------------------------------------------------");
+		
 		Clientes c1 = new Clientes("Camila", "23433378921");
 		CCorrente cc1 = new CCorrente(5000, 4500);
 		CEspecial ce1 = new CEspecial(5001, 1500, 500);
@@ -33,12 +59,6 @@ public class Main {
 		c4.addContas(ce4);
 		c4.addContas(cp4);
 		c4.addContas(ci4);
-		
-//		CCorrente cc = new CCorrente(5000, 4500);
-//		CEspecial ce = new CEspecial(5001, 1500, 500);
-//		CPoupanca cp = new CPoupanca(5002, 1000, 700);
-//		CInvestimento ci = new CInvestimento(5003, 100, 20, 5);
-		
 
 		System.out.println(c1);
 		System.out.println("-----------------------------------------------------");
@@ -48,6 +68,11 @@ public class Main {
 		System.out.println("-----------------------------------------------------");
 		System.out.println(c4);
 		System.out.println("-----------------------------------------------------");
+		
+//		CCorrente cc = new CCorrente(5000, 4500);
+//		CEspecial ce = new CEspecial(5001, 1500, 500);
+//		CPoupanca cp = new CPoupanca(5002, 1000, 700);
+//		CInvestimento ci = new CInvestimento(5003, 100, 20, 5);
 		
 //		System.out.println(cc);
 //		cc.debitar(300);
