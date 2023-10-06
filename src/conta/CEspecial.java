@@ -1,6 +1,6 @@
 package conta;
 
-public class CEspecial extends CCorrente{
+public class CEspecial extends CCorrente implements Tributavel{
 	private int limite;
 
 	public CEspecial(int numero, double saldo, int limite) {
@@ -23,10 +23,13 @@ public class CEspecial extends CCorrente{
 			System.out.println("\n Saldo Insuficiente");
 		}
 	}
-
+	@Override
+	public float calculaTributos() {
+		return (float) (super.getSaldo() * 0.05);
+	}
 	@Override
 	public String toString() {
-		return "\n \n CONTA ESPECIAL \n Número: " + super.getNumero() + "\n Saldo: " + super.getSaldo() +"\n Limite: " + limite;
+		return "\n \n CONTA ESPECIAL \n Número: " + super.getNumero() + "\n Saldo: " + super.getSaldo() +"\n Limite: " + limite + "\n Tributos: "+calculaTributos();
 	}
 	
 }

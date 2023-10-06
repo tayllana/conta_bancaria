@@ -1,6 +1,6 @@
 package conta;
 
-public class CCorrente {
+public class CCorrente implements Tributavel{
 	private int numero;
 	private double saldo;
 	
@@ -35,9 +35,15 @@ public class CCorrente {
 			System.out.println("\n Saldo Insuficiente");
 		}
 	}
+	
+	@Override
+	public float calculaTributos() {
+		return (float) (saldo * 0.01);
+	}
+	
 	@Override
 	public String toString() {
-		return "\n CONTA CORRENTE \n Número: " + numero + "\n Saldo: " + saldo;
+		return "\n CONTA CORRENTE \n Número: " + numero + "\n Saldo: " + saldo + "\n Tributos: "+calculaTributos();
 	}
 	
 }
